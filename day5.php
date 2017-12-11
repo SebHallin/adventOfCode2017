@@ -1,4 +1,5 @@
 <?php
+$input = trim(file_get_contents('input5.txt'));
 $rows1 = $rows2 = array_values(preg_split('/\n+/', $input));
 
 # 1
@@ -30,5 +31,4 @@ while (true) {
     $pos += $newPos;
     $steps ++;
 }
-
-echo implode('<br>', [$answer1, $answer2]);
+echo $answer1."\n".$answer2."\n";
