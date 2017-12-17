@@ -22,7 +22,8 @@ function getInstructions ()
     return $instructions;
 }
 
-function processInstructions(&$instructions){
+function processInstructions (&$instructions)
+{
     foreach($instructions as &$instruction){
         $parts = explode('/', substr($instruction, 1));
         $instruction = [
@@ -33,11 +34,13 @@ function processInstructions(&$instructions){
     }
 }
 
-function borrowDancers (){
+function borrowDancers ()
+{
     return array_flip(range('a', 'p'));
 }
 
-function repeatDance($dancers, $instructions){
+function repeatDance ($dancers, $instructions)
+{
     while(true){
         $dancers = letsDance($dancers, $instructions);
         $dancersLinedUp = lineUpDancers($dancers);
@@ -50,7 +53,8 @@ function repeatDance($dancers, $instructions){
     }
 }
 
-function lineUpDancers($dancers){
+function lineUpDancers ($dancers)
+{
     $dancers = array_flip($dancers);
     ksort($dancers);
     return implode('',$dancers);
